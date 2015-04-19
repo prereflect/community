@@ -14,6 +14,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'quiet_assets'
