@@ -1,0 +1,27 @@
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_for @user do |f| %>
+  <div class='form-group'>
+    <%= f.label :username, class: 'sr-only' %>
+    <%= f.text_field :username,
+      class: 'form-control',
+      placeholder: 'Username' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :password, class: 'sr-only' %>
+    <%= f.password_field :password,
+      class: 'form-control',
+      placeholder: 'Password' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :time_zone, class: 'sr-only' %>
+    <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones,
+      {:default => 'Pacific Time (US & Canada)'},
+      {:class => 'form-control'} %>
+  </div>
+
+  <%= f.submit @user.new_record? ? 'Register' :
+    'Update Profile', class: 'btn' %>
+<% end %>

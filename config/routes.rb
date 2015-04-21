@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :welcome
-
   root 'welcome#index'
+
+  get '/register', to: 'users#new'
+
+  resources :welcome
+  resources :users
 end
