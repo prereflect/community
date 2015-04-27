@@ -1,5 +1,9 @@
 body {
-  background-color: #eee;
+  background-color: #fff;
+}
+
+.first-container {
+  padding-top: 40px;
 }
 
 .form-signin {

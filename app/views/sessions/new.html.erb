@@ -7,7 +7,8 @@
     <%= text_field_tag :username,
       params[:username] || '',
       placeholder: 'Username',
-      class: 'form-control' %>
+      class: 'form-control',
+      autofocus: true %>
   </div>
 
   <div class='form-group'>

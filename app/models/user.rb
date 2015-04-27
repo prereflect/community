@@ -6,4 +6,6 @@ class User < ActiveRecord::Base
 
   has_secure_password validations: false
   sluggable_column :username
+
+  mount_uploader :avatar, AvatarUploader
 end

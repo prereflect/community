@@ -16,6 +16,10 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'sluggable_woller'
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development, :test do
   gem 'quiet_assets'

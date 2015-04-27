@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       signin_user!(user)
     else
       flash[:error] = 'Your username or password is incorrect'
-      redirect_to register_url
+      redirect_to signin_url
     end
   end
 

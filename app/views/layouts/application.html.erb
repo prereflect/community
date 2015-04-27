@@ -5,7 +5,7 @@
   <%= stylesheet_link_tag 'application',
     media: 'all',
     'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'signin',
+  <%= stylesheet_link_tag 'custom',
     media: 'all',
     'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,7 +13,12 @@
 </head>
 <body>
   <%= render 'layouts/navigation' %>
-  <%= render 'layouts/messages' %>
-  <%= yield %>
+
+  <div class='first-container'>
+    <%= render 'layouts/messages' %>
+
+    <%= yield %>
+
+  </div>
 </body>
 </html>

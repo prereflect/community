@@ -19,3 +19,4 @@
 /myapp.sh
 *.swp
 /.ruby-version
+.env
