@@ -1,0 +1,17 @@
+<div class='row post-space-top'>
+  <div class='col-md-2'>
+    <%= image_tag(@post.creator.avatar.post_avatar,
+                  class: 'img-thumbnail')%>
+  </div>
+  <div class='col-md-10'>
+    <h3><%= @post.title %></h3>
+    <p><%= @post.body %></p>
+    <hr>
+    <small>
+      From <%= link_to @post.creator.username, user_path(@post.creator) %>
+      on <%= @post.created_at %>
+      <%= link_to '<i class="fa fa-pencil-square-o"></i> Edit'.html_safe,
+        edit_post_path(@post) %>
+    </small>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My App</title>
+  <title>Community</title>
   <%= stylesheet_link_tag 'application',
     media: 'all',
     'data-turbolinks-track' => true %>
@@ -12,13 +12,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/navigation' %>
-
-  <div class='first-container'>
-    <%= render 'layouts/messages' %>
-
-    <%= yield %>
-
-  </div>
+  <div class='container first-container'>
+    <div class='row'>
+      <div class='col-md-8 col-md-offset-2'>
+        <%= render 'layouts/navigation' %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    </div>
+  </div
 </body>
 </html>

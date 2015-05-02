@@ -1,9 +1,13 @@
-body {
-  background-color: #fff;
+.first-container, .post-space-top {
+  padding-top: 40px;
 }
 
-.first-container {
-  padding-top: 40px;
+h3 {
+  margin-top: 0px;
+}
+
+.img-circle {
+  margin-right: 5px;
 }
 
 .form-signin {

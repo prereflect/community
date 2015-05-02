@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def access_denied
-    flash[:error] = 'You are not allowed to perform that action.'
+    flash[:error] = 'You are not allowed to perform that action'
     redirect_to root_path
   end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'posts#index'
 
   get '/register', to: 'users#new'
 
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get '/signout', to: 'sessions#destroy'
 
-  resources :welcome, only: [:index]
   resources :users
+  resources :posts
+  resources :comments, only: [:create]
 end
