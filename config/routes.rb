@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/signout', to: 'sessions#destroy'
 
   resources :users
-  resources :posts
-  resources :comments, only: [:create]
+  resources :posts do
+    resources :comments, only: [:create]
+  end
 end

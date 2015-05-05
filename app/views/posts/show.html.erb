@@ -4,7 +4,7 @@
                   class: 'img-thumbnail')%>
   </div>
   <div class='col-md-10'>
-    <h3><%= @post.title %></h3>
+    <h2><%= @post.title %></h2>
     <p><%= @post.body %></p>
     <hr>
     <small>
@@ -15,3 +15,37 @@
     </small>
   </div>
 </div>
+
+<% if signed_in? %>
+
+<div class='row post-space-top'>
+  <div class='col-md-6'>
+    <%= form_for [@post, @comment] do |f| %>
+      <%= render 'shared/errors', obj: @comment %>
+      <div class='form-group'>
+        <%= f.label :body, class: 'sr-only' %>
+        <%= f.text_area :body,
+          class: 'form-control',
+          rows: 6,
+          placeholder: 'Comment' %>
+      </div>
+      <%= f.submit 'Create Comment', class: 'btn' %>
+    <% end %>
+  </div>
+</div>
+
+<% end %>
+
+<div class='row post-space-top'>
+  <div class='col-md-12'>
+    <h3>Comments</h3> 
+  </div>
+</div>
+
+<% @post.reload.comments.each do |comment| %>
+  <div class='row post-space-top'>
+    <div class='col-md-12'>
+      <%= render 'comments/comment', comment: comment %>
+    </div>
+  </div>
+<% end %>
