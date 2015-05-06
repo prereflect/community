@@ -1,0 +1,10 @@
+<h3 id='post'><%= link_to post.title, post_path(post) %></h3>
+<p><%= post.body %></p>
+<hr>
+<small>
+  <%= post.created_at %>
+  <% if post.tags.any? %>
+    <br>
+    <i class='fa fa-tags'></i> Tags  <%= render post.tags %>
+  <% end %>
+</small>

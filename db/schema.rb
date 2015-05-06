@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150502013529) do
+ActiveRecord::Schema.define(version: 20150505180201) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
     t.integer  "user_id"
     t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "post_tags", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "tag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,6 +38,13 @@ ActiveRecord::Schema.define(version: 20150502013529) do
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

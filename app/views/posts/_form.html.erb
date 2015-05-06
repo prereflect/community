@@ -18,6 +18,13 @@
       placeholder: 'Body' %>
   </div>
 
+  <div class='form-group'>
+    <%= f.label :tags, class: 'sr-only'%>
+    <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :name do |cb| %>
+      <% cb.label(class: 'checkbox-inline') {cb.check_box(class: 'checkbox-inline') + cb.text} %>
+    <% end %>
+  </div>
+
   <%= f.submit @post.new_record? ? 'Submit' :
     'Update Post', class: 'btn' %>
 <% end %>

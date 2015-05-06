@@ -1,14 +1,13 @@
 <% show_post ||= false %>
 
-<p>
+<p id='comment'>
   <em><%= comment.body %></em>
 </p>
-<hr />
+<hr>
 <p>
   <small>
-    From <%= link_to comment.creator.username, user_path(comment.creator) %>
     <% if show_post %>
-      on
+      On
       <%= link_to comment.post.title, post_path(comment.post) %>
     <% end %>
     <%= comment.created_at %>

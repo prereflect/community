@@ -1,9 +1,16 @@
-.first-container, .post-space-top {
+.first-container,
+.post-space-top,
+p#comment,
+h3#post {
   padding-top: 40px;
 }
 
 h1, h2, h3 {
   margin-top: 0px;
+}
+
+ul.nav-tabs {
+  padding-top: 40px;
 }
 
 .img-circle {

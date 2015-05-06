@@ -1,17 +1,19 @@
-<div class='row post-space-top'>
+<div id='post' class='row post-space-top'>
   <div class='col-md-2'>
     <%= image_tag(post.creator.avatar.post_avatar,
                   class: 'img-thumbnail')%>
   </div>
   <div class='col-md-10'>
-    <h2><%= link_to post.title, post %></h2>
+    <h3><%= link_to post.title, post %></h3>
     <p><%= post.body %></p>
     <hr>
     <small>
       From <%= link_to post.creator.username, user_path(post.creator) %>
       on <%= post.created_at %>
-      <%= link_to '<i class="fa fa-pencil-square-o"></i> Edit'.html_safe,
-        edit_post_path(post) %>
+      <% if post.tags.any? %>
+      <br>
+      <i class='fa fa-tags'></i> Tags  <%= render post.tags %>
+      <% end %>
     </small>
   </div>
 </div>

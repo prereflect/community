@@ -1,0 +1,8 @@
+<% header = link_to('All Posts', posts_path) +
+  " &raquo; #{@tag.name}".html_safe %>
+
+<%= render 'shared/content_title', title: header %>
+
+<% @tag.posts.each do |post| %>
+  <%= render 'posts/index_post', post: post %>
+<% end %>

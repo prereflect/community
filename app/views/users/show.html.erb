@@ -10,8 +10,29 @@
   </div>
 </div>
 
+<div class='row'>
 <div class='col-md-12'>
-  <% @user.posts.each do |post| %>
-    <%= render '/posts/post', post: post %>
+  <ul class='nav nav-tabs'>
+    <li class='<%= 'active' if params[:tab].nil? %>'>
+      <%= link_to 'Posts', user_path(@user) %></h3>
+    </li>
+    <li class='<%= 'active' if params[:tab] == 'comments' %>'>
+      <%= link_to 'Comments', user_path(@user, tab: 'comments') %></h3>
+    </li>
+  </ul>
+</div>
+</div>
+
+<div class='row'>
+<div class='col-md-12'>
+  <% if params[:tab].nil? %>
+    <% @user.posts.each do |post| %>
+      <%= render '/posts/profile_post', post: post %>
+    <% end %>
+  <% elsif params[:tab] == 'comments' %>
+    <% @user.comments.each do |comment| %>
+      <%= render '/comments/profile_comment', comment: comment, show_post: true %>
+    <% end %>
   <% end %>
+</div>
 </div>

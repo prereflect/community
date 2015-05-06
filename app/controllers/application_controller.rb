@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     Time.zone = current_user.time_zone if current_user
   end
 
-  helper_method :current_user, :signed_in?
+  helper_method :current_user, :signed_in?, :edit_post?
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -25,6 +25,10 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     access_denied unless signed_in? && current_user.admin?
+  end
+
+  def edit_post?
+    current_user == @post.creator || signed_in? && current_user.admin?
   end
 
   def access_denied

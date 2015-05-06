@@ -1,0 +1,16 @@
+<div class='col-md-6 col-md-offset-3'>
+  <%= render 'shared/content_title', title: 'New Tag' %>
+  <%= render 'shared/errors', obj: @tag %>
+
+  <%= form_for @tag do |f| %>
+    <div class='form-group'>
+      <%= f.label :name, class: 'sr-only' %>
+      <%= f.text_field :name,
+        class: 'form-control',
+        placeholder: 'Name',
+        autofocus: true %>
+    </div>
+
+    <%= f.submit 'Create Tag', class: 'btn' %>
+  <% end %>
+</div>
