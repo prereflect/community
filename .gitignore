@@ -20,3 +20,5 @@
 *.swp
 /.ruby-version
 .env
+
+/coverage
