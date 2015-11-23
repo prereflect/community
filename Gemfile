@@ -30,6 +30,7 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda-matchers', '~> 3.0'
   gem 'factory_girl_rails'
+  gem 'forgery'
   gem 'simplecov', :require => false
 end
 
